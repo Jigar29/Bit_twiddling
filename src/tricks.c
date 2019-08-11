@@ -106,3 +106,9 @@ int countNumberOfOnes(int num)
 	}
 	return counter;
 }
+
+int findAbsolute(int num)
+{
+	int mask = (num >> ((sizeof(int)*8)-1));
+	return ((num + mask)^mask);
+}

@@ -22,6 +22,7 @@ int getTheSignOfTheNumber(int num);
 bool isSameSign(int num1, int num2);
 int getAbs(int num);
 int countNumberOfOnes(int num);
+int findAbsolute(int num);
 bool isPowerOf2(int num);
 
 #endif /* METHODS_H_ */

@@ -36,6 +36,7 @@ int main(void)
 	printf("The number after toggling the given bit number is = 0x%x\n", toggleBitNumber(num, 2));
 	printf("The bit at the given position is currently = %d\n", readBitNumber(num, 3));
 	printf("Number of ones in the given number are = %d\n", countNumberOfOnes(num));
+	printf("Absolute of  the given number is = %d\n", findAbsolute(-56));
 
 	if(isOdd(-1))
 	{
