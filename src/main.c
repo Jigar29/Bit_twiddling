@@ -12,8 +12,16 @@
 #include <stdlib.h>
 
 #include "methods.h"
+#include "popular_questions.h"
 
-int main(void) {
+int main(void)
+{
+	int x = 0x11001000;
+	swapNibble(x);
+	countOnesInNum(x);
+	reverseBits(x);
+	swapHalfWord(x);
+	upperWordBitsSwap(x);
 
 	getTheSignOfTheNumber(-1);
 	isSameSign(1, -3);
@@ -22,5 +30,5 @@ int main(void) {
 
 	printf("%x\n", a);
 	isPowerOf2(6);
-	return EXIT_SUCCESS;
+	return 0;
 }

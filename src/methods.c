@@ -6,6 +6,7 @@
  */
 
 #include "methods.h"
+#include <stdbool.h>
 
 int getTheSignOfTheNumber(int num)
 {
