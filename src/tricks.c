@@ -5,20 +5,32 @@
  *  Author: jigaragrawal
  */
 
-#include "methods.h"
 #include <stdbool.h>
+#include <tricks.h>
 
-int getTheSignOfTheNumber(int num)
+int setBitNumber(int num, int bit_no)
 {
-	int sign = 0;
+	return (num | (1<<(bit_no-1)));
+}
 
-	if(!num)
-		return 0;
+int clearBitNumber(int num, int bit_no)
+{
+	return (num & ~(1<<(bit_no-1)));
+}
 
-	sign = ((unsigned int)num)>>(sizeof(int)*8 - 1);    // Shifting the MSB to LSB
+int toggleBitNumber(int num, int bit_no)
+{
+	return (num ^ (1<<(bit_no-1)));
+}
 
-	printf("Sign of the num is %d\n", sign);
-	return sign;
+bool readBitNumber(int num, int bit_no)
+{
+	return ((num & (1<<(bit_no-1))) == (1<<(bit_no-1)));
+}
+
+bool isOdd(int num)
+{
+	return ((bool)(num & 0x01));
 }
 
 bool isSameSign(int num1, int num2)
@@ -56,9 +68,41 @@ bool isPowerOf2(int num)
 	return result;
 }
 
+int getTheSignOfTheNumber(int num)
+{
+	int sign = 0;
+
+	if(!num)
+		return 0;
+
+	sign = ((unsigned int)num)>>(sizeof(int)*8 - 1);    // Shifting the MSB to LSB
+
+	printf("Sign of the num is %d\n", sign);
+	return sign;
+}
+
+void swapNubers(int *a, int *b)
+{
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
+}
+
 int getAbs(int num)
 {
 	int result = 0;
 
 	return result;
+}
+
+int countNumberOfOnes(int num)
+{
+	int counter = 0;
+
+	while(num)
+	{
+		counter++;
+		num = num &(num-1);
+	}
+	return counter;
 }
